@@ -3,6 +3,7 @@
 
 #include <string>
 #include "stack.h"
+#include <iostream>
 
 using namespace std;
 
@@ -11,14 +12,17 @@ class TPostfix
   string infix;
   string postfix;
 public:
-  TPostfix()
+  TPostfix(string s)
   {
-    infix = "a + b";
+    infix = s;
+	postfix = s;
   }
   string GetInfix() { return infix; }
   string GetPostfix() { return postfix; }
   string ToPostfix();
-  double Calculate(); // Ввод переменных, вычисление по постфиксной форме
+  int GetSizeInfix() { return infix.length(); }
+  double Calculate();
+  int Sign(char c);
 };
 
 #endif
